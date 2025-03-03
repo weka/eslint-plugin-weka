@@ -1,6 +1,6 @@
 {
   "name": "@weka/eslint-plugin-weka",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ESLint plugin to enforce using EMPTY_STRING from 'consts' instead of empty string literals",
   "main": "index.js",
   "author": "Weka Home Team",
