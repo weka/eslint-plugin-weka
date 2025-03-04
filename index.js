@@ -30,12 +30,12 @@ module.exports = {
 
               context.report({
                 node,
-                message: "Empty string literals are not allowed. Use EMPTY_STRING from 'src/Utils/consts' instead.",
+                message: "Empty string literals are not allowed. Use EMPTY_STRING from 'consts' instead.",
                 fix(fixer) {
                   // Check if EMPTY_STRING is already imported
                   const sourceCode = context.getSourceCode();
                   const importDeclarations = sourceCode.ast.body.filter(
-                    (node) => node.type === "ImportDeclaration" && node.source.value === "src/Utils/consts"
+                    (node) => node.type === "ImportDeclaration"
                   );
 
                   let hasEmptyStringImport = false;

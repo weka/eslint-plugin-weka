@@ -8,7 +8,5 @@ __metadata:
 "@weka/eslint-plugin-weka@workspace:.":
   version: 0.0.0-use.local
   resolution: "@weka/eslint-plugin-weka@workspace:."
-  peerDependencies:
-    eslint: ^8.56.0
   languageName: unknown
   linkType: soft
