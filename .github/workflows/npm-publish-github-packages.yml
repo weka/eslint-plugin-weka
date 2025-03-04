@@ -12,10 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install Yarn 4.6
+        run: corepack enable && corepack prepare yarn@4.6.0 --activate
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm i
+      - run: yarn
 
   publish-gpr:
     needs: build
@@ -25,11 +27,13 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
+      - name: Install Yarn 4.6
+        run: corepack enable && corepack prepare yarn@4.6.0 --activate
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-      - run: npm i
+      - run: yarn
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
